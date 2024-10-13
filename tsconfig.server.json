@@ -4,10 +4,10 @@
     "module": "commonjs",
     "outDir": "dist",
     "noEmit": false,
-    "jsx": "react",
+    "jsx": "react-jsx", // Use this for React 17+; if you are using an older React version, change this to "react"
   },
   "include": [
-    "src/server.ts",
-    "src/payload/payload.config.ts",
+    "src/**/*.ts", // Include all TypeScript files
+    "src/**/*.tsx" // Include all TSX (React) files
   ]
 }
