@@ -6,7 +6,7 @@
 :root {
   --base: 24px;
   --font-body: 'Jost', sans-serif;
-  --font-mono: 'Jost', sans-serif;
+  --font-jost: 'Jost', sans-serif;
 
   --gutter-h: 180px;
   --block-padding: 120px;
@@ -49,6 +49,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--color-dark-500);
+
   display: flex;
   flex-flow: column;
 }
@@ -103,13 +104,14 @@ p {
 
 ul,
 ol {
-margin: 0;
-padding: 0;
-list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 a {
   color: var(--color-dark-500);
+  text-decoration: none;
 
   &:focus {
     opacity: .8;
@@ -121,7 +123,6 @@ a {
     outline: none;
   }
 }
-
 
 svg {
   vertical-align: middle;
