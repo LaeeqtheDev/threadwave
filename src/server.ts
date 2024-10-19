@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import next from 'next'
+import nextBuild from 'next/dist/build'
 import path from 'path'
 
 dotenv.config({
@@ -8,6 +9,7 @@ dotenv.config({
 
 import express from 'express'
 import payload from 'payload'
+
 import { seed } from './payload/seed'
 
 const app = express()
@@ -27,6 +29,17 @@ const start = async (): Promise<void> => {
     process.exit()
   }
 
+  if (process.env.NEXT_BUILD) {
+    app.listen(PORT, async () => {
+      payload.logger.info(`Next.js is now building...`)
+      // @ts-expect-error
+      await nextBuild(path.join(__dirname, '../'))
+      process.exit()
+    })
+
+    return
+  }
+
   const nextApp = next({
     dev: process.env.NODE_ENV !== 'production',
   })
@@ -38,7 +51,7 @@ const start = async (): Promise<void> => {
   nextApp.prepare().then(() => {
     payload.logger.info('Starting Next.js...')
 
-    app.listen(PORT, () => {
+    app.listen(PORT, async () => {
       payload.logger.info(`Next.js App URL: ${process.env.PAYLOAD_PUBLIC_SERVER_URL}`)
     })
   })
