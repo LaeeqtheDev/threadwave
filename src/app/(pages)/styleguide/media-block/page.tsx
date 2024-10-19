@@ -2,14 +2,13 @@ import React, { Fragment } from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
+import staticImage from '../../../../../public/static-image.jpg'
 import { MediaBlock } from '../../../_blocks/MediaBlock'
 import { Gutter } from '../../../_components/Gutter'
 import { VerticalPadding } from '../../../_components/VerticalPadding'
 import { mergeOpenGraph } from '../../../_utilities/mergeOpenGraph'
 
 export default async function MediaBlockPage() {
-  const fallbackImage = '../../../../../public/static-image.jpeg' // Replace with your default image path
-
   return (
     <Fragment>
       <Gutter>
@@ -21,17 +20,14 @@ export default async function MediaBlockPage() {
         <h1>Media Block</h1>
       </Gutter>
       <VerticalPadding bottom="large" top="none">
-        <MediaBlock
-          position="default"
-          blockType="mediaBlock"
-          media={'' || fallbackImage} // Fallback if media is empty
-        />
+        <MediaBlock position="default" blockType="mediaBlock" media="" staticImage={staticImage} />
         <br />
         <br />
         <MediaBlock
           position="fullscreen"
           blockType="mediaBlock"
-          media={'' || fallbackImage} // Fallback if media is empty
+          media=""
+          staticImage={staticImage}
         />
       </VerticalPadding>
     </Fragment>
