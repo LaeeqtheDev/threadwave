@@ -64,7 +64,7 @@ const CreateAccountForm: React.FC = () => {
         clearTimeout(timer)
         if (redirect) router.push(redirect as string)
         else router.push(`/`)
-      window.location.href = '/'
+        window.location.href = '/'
       } catch (_) {
         clearTimeout(timer)
         setError('There was an error with the credentials provided. Please try again.')
@@ -75,9 +75,8 @@ const CreateAccountForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-    
       <Message error={error} className={classes.message} />
-      
+
       <Input
         name="email"
         label="Email Address"

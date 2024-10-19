@@ -13,9 +13,7 @@ const BeforeDashboard: React.FC = () => {
     <div className={baseClass}>
       <Banner className={`${baseClass}__banner`} type="success">
         <h4>Welcome to your dashboard!</h4>
-
       </Banner>
-     
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { VerticalPadding } from '../../../_components/VerticalPadding'
 import { mergeOpenGraph } from '../../../_utilities/mergeOpenGraph'
 
 export default async function MediaBlockPage() {
-  const fallbackImage = '../../../../../public/static-image.jpeg'; // Replace with your default image path
+  const fallbackImage = '../../../../../public/static-image.jpeg' // Replace with your default image path
 
   return (
     <Fragment>
@@ -24,14 +24,14 @@ export default async function MediaBlockPage() {
         <MediaBlock
           position="default"
           blockType="mediaBlock"
-          media={"" || fallbackImage} // Fallback if media is empty
+          media={'' || fallbackImage} // Fallback if media is empty
         />
         <br />
         <br />
         <MediaBlock
           position="fullscreen"
           blockType="mediaBlock"
-          media={"" || fallbackImage} // Fallback if media is empty
+          media={'' || fallbackImage} // Fallback if media is empty
         />
       </VerticalPadding>
     </Fragment>

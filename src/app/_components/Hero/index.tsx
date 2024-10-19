@@ -10,8 +10,7 @@ const heroes = {
   highImpact: HighImpactHero,
   mediumImpact: MediumImpactHero,
   lowImpact: LowImpactHero,
-  customHero: CustomHero
-   
+  customHero: CustomHero,
 }
 
 export const Hero: React.FC<Page['hero']> = props => {

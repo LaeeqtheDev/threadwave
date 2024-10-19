@@ -4,10 +4,8 @@ const BeforeLogin: React.FC = () => {
   return (
     <div>
       <p>
-        <b>Welcome to your dashboard!</b>
-        {' '}
+        <b>Welcome to your dashboard!</b>{' '}
         <a href={`${process.env.PAYLOAD_PUBLIC_SERVER_URL}/login`}>Log in to the site instead</a>
-        
       </p>
     </div>
   )
