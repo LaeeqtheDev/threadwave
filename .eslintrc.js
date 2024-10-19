@@ -5,5 +5,7 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'no-console': 'off', // Disable no-console rule
+    'simple-import-sort/imports': 'off', // Disable import sorting rule
   },
 }
